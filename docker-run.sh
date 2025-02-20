@@ -21,7 +21,7 @@ chmod 777 -R ${PERSISTENT_STORAGE_DIR}/storage
 
 # Link storage
 # php artisan storage:link
-php artisan optimize:clear && php artisan config:cache && php artisan storage:link 
+php artisan optimize:clear && php artisan config:cache && php artisan migrate --force && php artisan storage:link 
 
 # Set API_URL
 sed -i '/^var API_URL/d' public/app/js/constants.js
