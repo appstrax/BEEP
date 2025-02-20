@@ -12,7 +12,7 @@ mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/framework/cache/data
 mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/framework/sessions
 mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/framework/views
 mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/logs
-# cp storage.bak/app/new_taxonomy_tables.sql storage/app
+cp storage.bak/app/new_taxonomy_tables.sql ${PERSISTENT_STORAGE_DIR}/storage/app
 chmod 777 -R ${PERSISTENT_STORAGE_DIR}/storage
 
 
