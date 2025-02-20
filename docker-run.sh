@@ -16,7 +16,7 @@ chmod 777 -R ${PERSISTENT_STORAGE_DIR}/storage
 
 
 # Migrate DB
-php artisan migrate
+#php artisan migrate
 
 # Link storage
 php artisan storage:link
