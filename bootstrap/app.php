@@ -41,6 +41,8 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->useStoragePath(env('PERSISTENT_STORAGE_DIR', base_path()) . '/storage');
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

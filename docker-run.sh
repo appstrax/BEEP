@@ -6,6 +6,7 @@ set -e
 pwd
 
 # Setup Storage Directory structure
+mkdir -p ${PERSISTENT_STORAGE_DIR}/storage
 mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/app/public
 mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/framework/cache/data
 mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/framework/sessions
@@ -19,7 +20,8 @@ chmod 777 -R ${PERSISTENT_STORAGE_DIR}/storage
 #php artisan migrate
 
 # Link storage
-php artisan storage:link
+# php artisan storage:link
+php artisan optimize:clear && php artisan config:cache && php artisan storage:link 
 
 # Set API_URL
 sed -i '/^var API_URL/d' public/app/js/constants.js
