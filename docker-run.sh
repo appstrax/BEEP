@@ -6,13 +6,13 @@ set -e
 pwd
 
 # Setup Storage Directory structure
-mkdir -p storage/app/public
-mkdir -p storage/framework/cache/data
-mkdir -p storage/framework/sessions
-mkdir -p storage/framework/views
-mkdir -p storage/logs
-cp storage.bak/app/new_taxonomy_tables.sql storage/app
-chmod 777 -R storage
+mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/app/public
+mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/framework/cache/data
+mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/framework/sessions
+mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/framework/views
+mkdir -p ${PERSISTENT_STORAGE_DIR}/storage/logs
+# cp storage.bak/app/new_taxonomy_tables.sql storage/app
+chmod 777 -R ${PERSISTENT_STORAGE_DIR}/storage
 
 
 # Migrate DB
